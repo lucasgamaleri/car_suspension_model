@@ -37,6 +37,13 @@ B = [B; zeros(3,8)];
 C = [1 0 0 0 0 0];
 D = 0;
 
-%Espacio de estados
+%Creacion de espacio de estados
 sys = ss(A,B,C,D);
-G = tf(sys);
+
+%Transformada de Fourier
+G = tf(sys)
+stepplot(G)
+
+%tf Postprocessing
+h = tfdata(G);
+
